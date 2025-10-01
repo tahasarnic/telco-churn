@@ -1,0 +1,28 @@
+preprocessing:
+  _target_: src.preprocessing.TelcoPreprocessor
+  features_to_drop:
+  - customerID
+  features_to_impute:
+  - TotalCharges
+  features_to_encode:
+  - gender
+  - Partner
+  - Dependents
+  - PhoneService
+  - MultipleLines
+  - InternetService
+  - OnlineSecurity
+  - OnlineBackup
+  - DeviceProtection
+  - TechSupport
+  - StreamingTV
+  - StreamingMovies
+  - Contract
+  - PaperlessBilling
+  - PaymentMethod
+  features_to_scale:
+  - tenure
+  - MonthlyCharges
+  - TotalCharges
+  imputation_method: median
+  drop_last: true

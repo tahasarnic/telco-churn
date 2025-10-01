@@ -1,0 +1,4 @@
+defaults:
+  - config_schema
+  - preprocessing: default
+  - _self_
