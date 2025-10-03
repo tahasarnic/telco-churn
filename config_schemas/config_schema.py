@@ -1,16 +1,18 @@
+from dataclasses import dataclass
+from typing import Any
 from hydra.core.config_store import ConfigStore
-from pydantic.dataclasses import dataclass
-from omegaconf import MISSING
+from config_schemas.preprocessing_schema import SimplePreprocessingConfig, ComplexPreprocessingConfig
 
-from config_schemas import preprocessing_schema
 
 @dataclass
 class Config:
-    preprocessing: preprocessing_schema.PreprocessorConfig = MISSING
+    """Main configuration schema."""
+    preprocessing: Any
 
 
-def setup_config() -> None:
-    preprocessing_schema.setup_config()
-
+def register_configs():
+    """Register all configuration schemas with Hydra."""
     cs = ConfigStore.instance()
     cs.store(name="config_schema", node=Config)
+    cs.store(group="preprocessing", name="simple_preprocessor_schema", node=SimplePreprocessingConfig)
+    cs.store(group="preprocessing", name="complex_preprocessor_schema", node=ComplexPreprocessingConfig)

@@ -1,1 +1,0 @@
-- preprocessing.features_to_drop=['customerID', 'TotalCharges']

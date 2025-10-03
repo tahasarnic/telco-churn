@@ -1,18 +1,44 @@
-from hydra.core.config_store import ConfigStore
+from dataclasses import dataclass, field
+from typing import Optional, List
 from omegaconf import MISSING
-from dataclasses import dataclass
+
 
 @dataclass
-class PreprocessorConfig:
-    _target_: str = "src.preprocessing.TelcoPreprocessor"
-    features_to_drop: list[str] = MISSING
-    features_to_impute: list[str] = MISSING
-    features_to_encode: list[str] = MISSING
-    features_to_scale: list[str] = MISSING
-    imputation_method: str = 'median'
-    drop_last: bool = True
-    _convert_: str = "all"
+class SimplePreprocessingConfig:
+    """Configuration schema for simple preprocessing pipeline (OneHotEncoder)."""
 
-def setup_config() -> None:
-    cs = ConfigStore.instance()
-    cs.store(group="preprocessing", name="preprocessing_schema", node=PreprocessorConfig)
+    _target_: str = "preprocessing.simple_preprocessing_pipeline"
+
+    # Feature dropping
+    features_to_drop: Optional[List[str]] = None
+
+    # Imputation
+    features_to_impute: Optional[List[str]] = None
+    imputation_method: str = "median"
+
+    # Encoding
+    features_to_encode: Optional[List[str]] = None
+    drop_last: bool = True
+
+    # Scaling
+    features_to_scale: Optional[List[str]] = None
+
+
+@dataclass
+class ComplexPreprocessingConfig:
+    """Configuration schema for complex preprocessing pipeline (OrdinalEncoder)."""
+
+    _target_: str = "preprocessing.complex_preprocessing_pipeline"
+
+    # Feature dropping
+    features_to_drop: Optional[List[str]] = None
+
+    # Imputation
+    features_to_impute: Optional[List[str]] = None
+    imputation_method: str = "median"
+
+    # Encoding
+    features_to_encode: Optional[List[str]] = None
+
+    # Scaling
+    features_to_scale: Optional[List[str]] = None

@@ -1,4 +1,11 @@
+# Main configuration file
 defaults:
-  - config_schema
-  - preprocessing: default
+  - preprocessing: simple_preprocessor
   - _self_
+
+# Hydra output directory configuration
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false

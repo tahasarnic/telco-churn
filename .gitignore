@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+.DS_Store
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

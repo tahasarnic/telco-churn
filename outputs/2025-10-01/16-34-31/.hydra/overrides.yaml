@@ -1,2 +1,0 @@
-- preprocessing.features_to_drop=['customerID', 'TotalCharges']
-- preprocessing.features_to_impute=[]

@@ -1,0 +1,40 @@
+# @package _global_.preprocessing
+_target_: preprocessing.simple_preprocessing_pipeline
+
+# Features to drop from the dataset
+features_to_drop:
+  - customerID
+
+# Features to impute (numerical features with missing values)
+features_to_impute:
+  - TotalCharges
+
+# Imputation method: 'mean' or 'median'
+imputation_method: median
+
+# Features to encode (categorical features)
+features_to_encode:
+  - gender
+  - Partner
+  - Dependents
+  - PhoneService
+  - MultipleLines
+  - InternetService
+  - OnlineSecurity
+  - OnlineBackup
+  - DeviceProtection
+  - TechSupport
+  - StreamingTV
+  - StreamingMovies
+  - Contract
+  - PaperlessBilling
+  - PaymentMethod
+
+# Drop last category in one-hot encoding to avoid multicollinearity
+drop_last: true
+
+# Features to scale (numerical features)
+features_to_scale:
+  - tenure
+  - MonthlyCharges
+  - TotalCharges
