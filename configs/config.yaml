@@ -1,6 +1,7 @@
 # Main configuration file
 defaults:
   - preprocessing: simple_preprocessor
+  - mlflow: mlflow
   - _self_
 
 # Hydra output directory configuration
