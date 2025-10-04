@@ -13,7 +13,6 @@ def main(cfg: DictConfig):
     df = pd.read_csv("data/cleaned_data.csv")
     X = df.drop(columns=["Churn"])
     y = df["Churn"]
-    y = y.map({"No": 0, "Yes": 1})  # Convert target to binary
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # Access preprocessing parameters

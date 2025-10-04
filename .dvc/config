@@ -1,0 +1,4 @@
+[core]
+    remote = telco_data
+['remote "telco_data"']
+    url = ../data
