@@ -1,4 +1,4 @@
 [core]
-    remote = telco_data
-['remote "telco_data"']
-    url = ../data
+    remote = local
+['remote "local"']
+    url = ../data/dvc_storage
