@@ -17,3 +17,11 @@ venv.bak/
 mlruns
 data/dvc_storage
 outputs/
+
+# DVC outputs
+data/cleaned_data.csv
+data/train.csv
+data/test.csv
+data/y_train.csv
+data/y_test.csv
+data/*.pkl
