@@ -25,3 +25,4 @@ data/test.csv
 data/y_train.csv
 data/y_test.csv
 data/*.pkl
+model_selection_results.yaml
