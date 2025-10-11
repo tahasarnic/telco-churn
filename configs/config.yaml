@@ -10,6 +10,7 @@ data:
   test_path: data/test.csv
   y_train_path: data/y_train.csv
   y_test_path: data/y_test.csv
+  preprocessing_pipeline_path: data/preprocessing_pipeline.pkl
   test_size: 0.2
   random_state: 42
   

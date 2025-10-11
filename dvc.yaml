@@ -1,0 +1,26 @@
+stages:
+  model_selection:
+    cmd: python3 2_model_selection.py
+    deps:
+    - 2_model_selection.py
+    - configs/config.yaml
+    - data/train.csv
+    - data/y_train.csv
+    outs:
+    - model_selection_results.yaml
+  preprocess:
+    cmd: python 1_preprocessing.py
+    deps:
+    - 1_preprocessing.py
+    - configs/config.yaml
+    - data/data.csv
+    params:
+    - data.random_state
+    - data.test_size
+    outs:
+    - data/cleaned_data.csv
+    - data/preprocessing_pipeline.pkl
+    - data/test.csv
+    - data/train.csv
+    - data/y_test.csv
+    - data/y_train.csv

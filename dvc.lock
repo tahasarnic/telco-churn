@@ -1,0 +1,26 @@
+schema: '2.0'
+stages:
+  model_selection:
+    cmd: python3 2_model_selection.py
+    deps:
+    - path: 2_model_selection.py
+      hash: md5
+      md5: 7719581191cdfd9198f50246ee698183
+      size: 2219
+    - path: configs/config.yaml
+      hash: md5
+      md5: d8f4abc569ac04a448b93cd1d42e62b3
+      size: 591
+    - path: data/train.csv
+      hash: md5
+      md5: 673b3fe8c8b65357deb4a4734fcbb2f4
+      size: 512607
+    - path: data/y_train.csv
+      hash: md5
+      md5: c9b61327d9c9b8b3d1a988e0ba0d7f3d
+      size: 11274
+    outs:
+    - path: model_selection_results.yaml
+      hash: md5
+      md5: 72c6258f85023d8d36c97bc3ebdcb64a
+      size: 259

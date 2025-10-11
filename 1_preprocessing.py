@@ -9,6 +9,7 @@ from feature_engine.wrappers import SklearnTransformerWrapper
 from sklearn.preprocessing import RobustScaler
 import hydra
 from omegaconf import DictConfig
+import joblib
 
 @hydra.main(version_base=None, config_path="configs", config_name="config")
 def main(cfg: DictConfig):
@@ -35,6 +36,9 @@ def main(cfg: DictConfig):
 
     X_train_scaled = preprocessing_pipeline.fit_transform(X_train, y_train)
     X_test_scaled = preprocessing_pipeline.transform(X_test)
+
+    # Save preprocessing pipeline
+    joblib.dump(preprocessing_pipeline, cfg.data.preprocessing_pipeline_path)
 
     # Save processed data
     X_train_scaled.to_csv(cfg.data.train_path, index=False)

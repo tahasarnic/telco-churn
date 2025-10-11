@@ -38,7 +38,7 @@ def main(cfg: DictConfig):
     for model_name in cfg.selection.models:
         model_cfg = OmegaConf.load(f'configs/model/{model_name}.yaml')
         model = get_model(model_name, model_cfg.params)
-        score = cross_val_score(model, X_train, y_train, cv=5)
+        score = cross_val_score(model, X_train, y_train, cv=cfg.selection.cv_folds, scoring=cfg.selection.scoring)
         experiment_results["Model"].append(model_name)
         experiment_results["Mean CV Score"].append(score.mean())
 
@@ -50,6 +50,7 @@ def main(cfg: DictConfig):
     output = OmegaConf.create({
         'best_model': best_model_name,
         'best_score': float(best_score),  # Convert numpy float to Python float
+        'metric': cfg.selection.scoring,
         'results': {
             'models': experiment_results["Model"],
             'cv_scores': [float(score) for score in experiment_results["Mean CV Score"]]
