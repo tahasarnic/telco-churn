@@ -14,9 +14,6 @@ stages:
     - 1_preprocessing.py
     - configs/config.yaml
     - data/data.csv
-    params:
-    - data.random_state
-    - data.test_size
     outs:
     - data/cleaned_data.csv
     - data/preprocessing_pipeline.pkl
