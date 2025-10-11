@@ -1,0 +1,13 @@
+best_model: logistic_regression
+best_score: 0.8043998354612523
+results:
+  models:
+  - logistic_regression
+  - svm
+  - knn
+  - random_forest
+  cv_scores:
+  - 0.8043998354612523
+  - 0.802980767563802
+  - 0.7674790110653884
+  - 0.7969451584788676

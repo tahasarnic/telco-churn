@@ -1,0 +1,10 @@
+name: knn
+params:
+  n_neighbors: 5
+  weights: uniform
+  algorithm: auto
+  leaf_size: 30
+  p: 2
+
+param_grid:
+  n_neighbors: [3, 5, 7, 9]

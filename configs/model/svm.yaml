@@ -1,0 +1,12 @@
+name: svm
+params:
+  C: 1.0
+  kernel: rbf
+  gamma: scale
+  random_state: 42
+
+param_grid:
+  C: [0.1, 1, 10]
+  kernel: [linear, rbf]
+  gamma: [scale, auto]
+  
