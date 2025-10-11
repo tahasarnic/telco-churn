@@ -24,3 +24,43 @@ stages:
       hash: md5
       md5: 72c6258f85023d8d36c97bc3ebdcb64a
       size: 259
+  preprocess:
+    cmd: python 1_preprocessing.py
+    deps:
+    - path: 1_preprocessing.py
+      hash: md5
+      md5: dc823c810fbe383985c628e8fe5a7ad6
+      size: 1979
+    - path: configs/config.yaml
+      hash: md5
+      md5: d8f4abc569ac04a448b93cd1d42e62b3
+      size: 591
+    - path: data/data.csv
+      hash: md5
+      md5: 0f9de68e012bd3aed5fa7cdc9fc421af
+      size: 977501
+    outs:
+    - path: data/cleaned_data.csv
+      hash: md5
+      md5: 271d21bb139e99eb31c00e2aee35e70e
+      size: 962966
+    - path: data/preprocessing_pipeline.pkl
+      hash: md5
+      md5: 593f38b8e735e4b4c8b30765268b6b1c
+      size: 2776
+    - path: data/test.csv
+      hash: md5
+      md5: 31039714dc388ab0068639953546954c
+      size: 128489
+    - path: data/train.csv
+      hash: md5
+      md5: 673b3fe8c8b65357deb4a4734fcbb2f4
+      size: 512607
+    - path: data/y_test.csv
+      hash: md5
+      md5: f0270f5ed4fa7449598f897bb4eb34c2
+      size: 2824
+    - path: data/y_train.csv
+      hash: md5
+      md5: c9b61327d9c9b8b3d1a988e0ba0d7f3d
+      size: 11274
