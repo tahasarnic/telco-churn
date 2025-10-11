@@ -1,4 +1,4 @@
 [core]
-    remote = gdrive
-['remote "gdrive"']
-    url = gdrive://1fFQyLPGG__BGvFyMSFWQYZD2prwabfxz
+    remote = local
+['remote "local"']
+    url = /Users/tahaerensarnic/telco-churn-dvc
