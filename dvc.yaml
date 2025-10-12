@@ -21,3 +21,15 @@ stages:
     - data/train.csv
     - data/y_test.csv
     - data/y_train.csv
+  hyperparameter_tuning:
+    cmd: python3 3_hyperparameter_tuning.py
+    deps:
+    - 3_hyperparameter_tuning.py
+    - configs/config.yaml
+    - data/test.csv
+    - data/train.csv
+    - data/y_test.csv
+    - data/y_train.csv
+    - model_selection_results.yaml
+    outs:
+    - tuning_results.yaml

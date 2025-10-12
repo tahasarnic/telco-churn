@@ -5,12 +5,12 @@ stages:
     deps:
     - path: 2_model_selection.py
       hash: md5
-      md5: 7719581191cdfd9198f50246ee698183
-      size: 2219
+      md5: c7d4d815222a570c5ae6ef01aad8fe09
+      size: 3808
     - path: configs/config.yaml
       hash: md5
-      md5: d8f4abc569ac04a448b93cd1d42e62b3
-      size: 591
+      md5: 5917f4732605ab8ce2080e2500cff4bc
+      size: 615
     - path: data/train.csv
       hash: md5
       md5: 673b3fe8c8b65357deb4a4734fcbb2f4
@@ -33,8 +33,8 @@ stages:
       size: 1979
     - path: configs/config.yaml
       hash: md5
-      md5: d8f4abc569ac04a448b93cd1d42e62b3
-      size: 591
+      md5: 5917f4732605ab8ce2080e2500cff4bc
+      size: 615
     - path: data/data.csv
       hash: md5
       md5: 62eecb427f309d21bf8437018ace9012
@@ -64,3 +64,39 @@ stages:
       hash: md5
       md5: c9b61327d9c9b8b3d1a988e0ba0d7f3d
       size: 11274
+  hyperparameter_tuning:
+    cmd: python3 3_hyperparameter_tuning.py
+    deps:
+    - path: 3_hyperparameter_tuning.py
+      hash: md5
+      md5: 1e1a00390cdf88ded6d46061536faa88
+      size: 2191
+    - path: configs/config.yaml
+      hash: md5
+      md5: 5917f4732605ab8ce2080e2500cff4bc
+      size: 615
+    - path: data/test.csv
+      hash: md5
+      md5: 31039714dc388ab0068639953546954c
+      size: 128489
+    - path: data/train.csv
+      hash: md5
+      md5: 673b3fe8c8b65357deb4a4734fcbb2f4
+      size: 512607
+    - path: data/y_test.csv
+      hash: md5
+      md5: f0270f5ed4fa7449598f897bb4eb34c2
+      size: 2824
+    - path: data/y_train.csv
+      hash: md5
+      md5: c9b61327d9c9b8b3d1a988e0ba0d7f3d
+      size: 11274
+    - path: model_selection_results.yaml
+      hash: md5
+      md5: 72c6258f85023d8d36c97bc3ebdcb64a
+      size: 259
+    outs:
+    - path: tuning_results.yaml
+      hash: md5
+      md5: aead5c9d5a5880692ca79e18bd9f05aa
+      size: 158
