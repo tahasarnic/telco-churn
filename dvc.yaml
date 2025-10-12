@@ -8,6 +8,7 @@ stages:
     - data/y_train.csv
     outs:
     - model_selection_results.yaml
+    - mlruns/
   preprocess:
     cmd: python 1_preprocessing.py
     deps:
@@ -31,5 +32,19 @@ stages:
     - data/y_test.csv
     - data/y_train.csv
     - model_selection_results.yaml
+    - mlruns/
     outs:
     - tuning_results.yaml
+  train:
+    cmd: python3 4_train.py
+    deps:
+    - 4_train.py
+    - configs/config.yaml
+    - data/test.csv
+    - data/train.csv
+    - data/y_test.csv
+    - data/y_train.csv
+    - mlruns/
+    outs:
+    - trained_models/final_model.pkl
+    - trained_models/final_model_results.yaml
